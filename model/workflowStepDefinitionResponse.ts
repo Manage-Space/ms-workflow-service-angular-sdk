@@ -41,6 +41,10 @@ export interface WorkflowStepDefinitionResponse {
      */
     raiseEventSchemaCodeName?: string;
     /**
+     * The name of a custom function.
+     */
+    externalStepName?: string;
+    /**
      * Step position
      */
     stepPosition: number;

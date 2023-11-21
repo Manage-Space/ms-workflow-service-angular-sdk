@@ -49,6 +49,10 @@ export interface WorkflowStepInstanceResponse {
      */
     raiseEventSchemaCodeName?: string;
     /**
+     * The name of a custom function.
+     */
+    externalStepName?: string;
+    /**
      * The event that will trigger this step.
      */
     executionTriggerValue?: string;
