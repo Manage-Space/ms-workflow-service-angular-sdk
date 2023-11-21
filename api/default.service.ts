@@ -21,6 +21,8 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { BadRequestError400Response } from '../model/badRequestError400Response';
 // @ts-ignore
+import { CreateMetaDataRequest } from '../model/createMetaDataRequest';
+// @ts-ignore
 import { CreateWorkflowDefinition200Response } from '../model/createWorkflowDefinition200Response';
 // @ts-ignore
 import { CreateWorkflowDefinitionRequest } from '../model/createWorkflowDefinitionRequest';
@@ -28,6 +30,8 @@ import { CreateWorkflowDefinitionRequest } from '../model/createWorkflowDefiniti
 import { ForbiddenError403Response } from '../model/forbiddenError403Response';
 // @ts-ignore
 import { GetByWorkflowInstanceId200Response } from '../model/getByWorkflowInstanceId200Response';
+// @ts-ignore
+import { GetStepCode200Response } from '../model/getStepCode200Response';
 // @ts-ignore
 import { GetWorkflowInstanceById200Response } from '../model/getWorkflowInstanceById200Response';
 // @ts-ignore
@@ -107,6 +111,83 @@ export class DefaultService {
             throw Error("key may not be null if value is not object or array");
         }
         return httpParams;
+    }
+
+    /**
+     * Create meta data for your organization workflows.
+     * Create meta data for your organization workflows.
+     * @param createMetaDataRequest 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public createMetaData(createMetaDataRequest: CreateMetaDataRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetStepCode200Response>;
+    public createMetaData(createMetaDataRequest: CreateMetaDataRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetStepCode200Response>>;
+    public createMetaData(createMetaDataRequest: CreateMetaDataRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetStepCode200Response>>;
+    public createMetaData(createMetaDataRequest: CreateMetaDataRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+        if (createMetaDataRequest === null || createMetaDataRequest === undefined) {
+            throw new Error('Required parameter createMetaDataRequest was null or undefined when calling createMetaData.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        let localVarCredential: string | undefined;
+        // authentication (bearer) required
+        localVarCredential = this.configuration.lookupCredential('bearer');
+        if (localVarCredential) {
+            localVarHeaders = localVarHeaders.set('Authorization', 'Bearer ' + localVarCredential);
+        }
+
+        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected === undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] = [
+                'application/json;v=1',
+                'application/json'
+            ];
+            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        let localVarHttpContext: HttpContext | undefined = options && options.context;
+        if (localVarHttpContext === undefined) {
+            localVarHttpContext = new HttpContext();
+        }
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/workflow/meta-data`;
+        return this.httpClient.request<GetStepCode200Response>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: createMetaDataRequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
     }
 
     /**
@@ -404,6 +485,81 @@ export class DefaultService {
 
         let localVarPath = `/workflow/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/instances/${this.configuration.encodeParam({name: "instanceId", value: instanceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/steps`;
         return this.httpClient.request<GetByWorkflowInstanceId200Response>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Get the code a step runs.
+     * Retrieve the code a step runs.
+     * @param orgId The Organization ID
+     * @param definitionId Workflow definition ID
+     * @param stepId Workflow step definition ID
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetStepCode200Response>;
+    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetStepCode200Response>>;
+    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetStepCode200Response>>;
+    public getStepCode(orgId: string, definitionId: string, stepId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+        if (orgId === null || orgId === undefined) {
+            throw new Error('Required parameter orgId was null or undefined when calling getStepCode.');
+        }
+        if (definitionId === null || definitionId === undefined) {
+            throw new Error('Required parameter definitionId was null or undefined when calling getStepCode.');
+        }
+        if (stepId === null || stepId === undefined) {
+            throw new Error('Required parameter stepId was null or undefined when calling getStepCode.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        let localVarCredential: string | undefined;
+        // authentication (bearer) required
+        localVarCredential = this.configuration.lookupCredential('bearer');
+        if (localVarCredential) {
+            localVarHeaders = localVarHeaders.set('Authorization', 'Bearer ' + localVarCredential);
+        }
+
+        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected === undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] = [
+                'application/json;v=1',
+                'application/json'
+            ];
+            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        let localVarHttpContext: HttpContext | undefined = options && options.context;
+        if (localVarHttpContext === undefined) {
+            localVarHttpContext = new HttpContext();
+        }
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/workflow/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/definitions/${this.configuration.encodeParam({name: "definitionId", value: definitionId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/steps/${this.configuration.encodeParam({name: "stepId", value: stepId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/code`;
+        return this.httpClient.request<GetStepCode200Response>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

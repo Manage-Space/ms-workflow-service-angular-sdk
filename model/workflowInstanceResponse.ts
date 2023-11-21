@@ -22,6 +22,10 @@ export interface WorkflowInstanceResponse {
      */
     orgId: string;
     /**
+     * Organization ID
+     */
+    siteId: string;
+    /**
      * Workflow Definition ID
      */
     workflowDefinitionId: string;

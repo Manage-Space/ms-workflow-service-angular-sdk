@@ -60,5 +60,9 @@ export interface CreateWorkflowStepDefinitionRequest {
      * Step type id
      */
     stepTypeId: number;
+    /**
+     * The name of a custom function.
+     */
+    externalStepName?: string;
 }
 

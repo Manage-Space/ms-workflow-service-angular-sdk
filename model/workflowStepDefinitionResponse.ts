@@ -70,11 +70,12 @@ export interface WorkflowStepDefinitionResponse {
     templates: object;
 }
 export namespace WorkflowStepDefinitionResponse {
-    export type StepTypeIdEnum = 1 | 2 | 3;
+    export type StepTypeIdEnum = 1 | 2 | 3 | 4;
     export const StepTypeIdEnum = {
         NUMBER_1: 1 as StepTypeIdEnum,
         NUMBER_2: 2 as StepTypeIdEnum,
-        NUMBER_3: 3 as StepTypeIdEnum
+        NUMBER_3: 3 as StepTypeIdEnum,
+        NUMBER_4: 4 as StepTypeIdEnum
     };
 }
 
