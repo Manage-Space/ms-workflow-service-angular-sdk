@@ -33,6 +33,8 @@ import { GetByWorkflowInstanceId200Response } from '../model/getByWorkflowInstan
 // @ts-ignore
 import { GetStepCode200Response } from '../model/getStepCode200Response';
 // @ts-ignore
+import { GetStepNames200Response } from '../model/getStepNames200Response';
+// @ts-ignore
 import { GetWorkflowInstanceById200Response } from '../model/getWorkflowInstanceById200Response';
 // @ts-ignore
 import { GetWorkflowInstances200Response } from '../model/getWorkflowInstances200Response';
@@ -560,6 +562,69 @@ export class DefaultService {
 
         let localVarPath = `/workflow/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/definitions/${this.configuration.encodeParam({name: "definitionId", value: definitionId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/steps/${this.configuration.encodeParam({name: "stepId", value: stepId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/code`;
         return this.httpClient.request<GetStepCode200Response>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Get the meta data step names for all steps in your organization.
+     * Get the meta data step names for all steps in your organization.
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getStepNames(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetStepNames200Response>;
+    public getStepNames(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetStepNames200Response>>;
+    public getStepNames(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetStepNames200Response>>;
+    public getStepNames(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+
+        let localVarHeaders = this.defaultHeaders;
+
+        let localVarCredential: string | undefined;
+        // authentication (bearer) required
+        localVarCredential = this.configuration.lookupCredential('bearer');
+        if (localVarCredential) {
+            localVarHeaders = localVarHeaders.set('Authorization', 'Bearer ' + localVarCredential);
+        }
+
+        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected === undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] = [
+                'application/json;v=1',
+                'application/json'
+            ];
+            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        let localVarHttpContext: HttpContext | undefined = options && options.context;
+        if (localVarHttpContext === undefined) {
+            localVarHttpContext = new HttpContext();
+        }
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/workflow/meta-data`;
+        return this.httpClient.request<GetStepNames200Response>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

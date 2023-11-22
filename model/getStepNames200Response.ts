@@ -9,11 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { MetaDataCodeResponse } from './metaDataCodeResponse';
+import { MetaDataNameResponse } from './metaDataNameResponse';
 
 
-export interface GetStepCode200Response { 
-    data?: Array<MetaDataCodeResponse>;
+export interface GetStepNames200Response { 
+    data?: Array<MetaDataNameResponse>;
     success?: boolean;
     error?: object;
 }

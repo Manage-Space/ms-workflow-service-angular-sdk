@@ -18,12 +18,14 @@ model/forbiddenError403Response.ts
 model/forbiddenError403ResponseError.ts
 model/getByWorkflowInstanceId200Response.ts
 model/getStepCode200Response.ts
+model/getStepNames200Response.ts
 model/getWorkflowInstanceById200Response.ts
 model/getWorkflowInstances200Response.ts
 model/getWorkflowStepDefinitions200Response.ts
 model/internalServerError500Response.ts
 model/internalServerError500ResponseError.ts
-model/metaDataResponse.ts
+model/metaDataCodeResponse.ts
+model/metaDataNameResponse.ts
 model/models.ts
 model/unauthorizedError401Response.ts
 model/unauthorizedError401ResponseError.ts

@@ -9,12 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { MetaDataCodeResponse } from './metaDataCodeResponse';
 
 
-export interface GetStepCode200Response { 
-    data?: Array<MetaDataCodeResponse>;
-    success?: boolean;
-    error?: object;
+export interface MetaDataCodeResponse { 
+    /**
+     * The code that the requested step runs.
+     */
+    code: string;
 }
 
