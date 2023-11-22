@@ -30,9 +30,9 @@ export interface WorkflowDefinitionResponse {
      */
     description: string;
     /**
-     * The event the step will raise.
+     * The event that triggers this workflow.
      */
-    triggerEventSchemaCodeName: string;
+    triggerEventSchemaCodeName: WorkflowDefinitionResponse.TriggerEventSchemaCodeNameEnum;
     /**
      * The number of instances of this definition.
      */
@@ -62,4 +62,34 @@ export interface WorkflowDefinitionResponse {
      */
     steps: Array<WorkflowStepDefinitionResponse>;
 }
+export namespace WorkflowDefinitionResponse {
+    export type TriggerEventSchemaCodeNameEnum = 'AuditEntryRequired' | 'MoveOutCreated' | 'ReservationCreated' | 'ReservationUpdated' | 'ReservationCancelled' | 'ReservationExpired' | 'SpaceReservationCreated' | 'LeaseCreated' | 'DiaryEntryRequired' | 'DiaryEntryActioned' | 'DocumentReady' | 'DocumentRequired' | 'DocumentCompleted' | 'CommunicationRequired' | 'CartLeaseItemPurchased' | 'InvoiceRequired' | 'InvoiceV2Required' | 'InvoiceStateChanged' | 'InvoiceV2LineItemRequired' | 'ImportCompleted' | 'SmartSearchCompleted' | 'PaymentRequested' | 'PaymentAttempted' | 'UpdateUnit';
+    export const TriggerEventSchemaCodeNameEnum = {
+        AuditEntryRequired: 'AuditEntryRequired' as TriggerEventSchemaCodeNameEnum,
+        MoveOutCreated: 'MoveOutCreated' as TriggerEventSchemaCodeNameEnum,
+        ReservationCreated: 'ReservationCreated' as TriggerEventSchemaCodeNameEnum,
+        ReservationUpdated: 'ReservationUpdated' as TriggerEventSchemaCodeNameEnum,
+        ReservationCancelled: 'ReservationCancelled' as TriggerEventSchemaCodeNameEnum,
+        ReservationExpired: 'ReservationExpired' as TriggerEventSchemaCodeNameEnum,
+        SpaceReservationCreated: 'SpaceReservationCreated' as TriggerEventSchemaCodeNameEnum,
+        LeaseCreated: 'LeaseCreated' as TriggerEventSchemaCodeNameEnum,
+        DiaryEntryRequired: 'DiaryEntryRequired' as TriggerEventSchemaCodeNameEnum,
+        DiaryEntryActioned: 'DiaryEntryActioned' as TriggerEventSchemaCodeNameEnum,
+        DocumentReady: 'DocumentReady' as TriggerEventSchemaCodeNameEnum,
+        DocumentRequired: 'DocumentRequired' as TriggerEventSchemaCodeNameEnum,
+        DocumentCompleted: 'DocumentCompleted' as TriggerEventSchemaCodeNameEnum,
+        CommunicationRequired: 'CommunicationRequired' as TriggerEventSchemaCodeNameEnum,
+        CartLeaseItemPurchased: 'CartLeaseItemPurchased' as TriggerEventSchemaCodeNameEnum,
+        InvoiceRequired: 'InvoiceRequired' as TriggerEventSchemaCodeNameEnum,
+        InvoiceV2Required: 'InvoiceV2Required' as TriggerEventSchemaCodeNameEnum,
+        InvoiceStateChanged: 'InvoiceStateChanged' as TriggerEventSchemaCodeNameEnum,
+        InvoiceV2LineItemRequired: 'InvoiceV2LineItemRequired' as TriggerEventSchemaCodeNameEnum,
+        ImportCompleted: 'ImportCompleted' as TriggerEventSchemaCodeNameEnum,
+        SmartSearchCompleted: 'SmartSearchCompleted' as TriggerEventSchemaCodeNameEnum,
+        PaymentRequested: 'PaymentRequested' as TriggerEventSchemaCodeNameEnum,
+        PaymentAttempted: 'PaymentAttempted' as TriggerEventSchemaCodeNameEnum,
+        UpdateUnit: 'UpdateUnit' as TriggerEventSchemaCodeNameEnum
+    };
+}
+
 
