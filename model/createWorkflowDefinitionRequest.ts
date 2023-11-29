@@ -27,7 +27,7 @@ export interface CreateWorkflowDefinitionRequest {
     steps: Array<CreateWorkflowStepDefinitionRequest>;
 }
 export namespace CreateWorkflowDefinitionRequest {
-    export type TriggerEventSchemaCodeNameEnum = 'AuditEntryRequired' | 'MoveOutCreated' | 'ReservationCreated' | 'ReservationUpdated' | 'ReservationCancelled' | 'ReservationExpired' | 'SpaceReservationCreated' | 'LeaseCreated' | 'DiaryEntryRequired' | 'DiaryEntryActioned' | 'DocumentReady' | 'DocumentRequired' | 'DocumentCompleted' | 'CommunicationRequired' | 'CartLeaseItemPurchased' | 'InvoiceRequired' | 'InvoiceV2Required' | 'InvoiceStateChanged' | 'InvoiceV2LineItemRequired' | 'ImportCompleted' | 'SmartSearchCompleted' | 'PaymentRequested' | 'PaymentAttempted' | 'UpdateUnit';
+    export type TriggerEventSchemaCodeNameEnum = 'AuditEntryRequired' | 'MoveOutCreated' | 'ReservationCreated' | 'ReservationUpdated' | 'ReservationCancelled' | 'ReservationExpired' | 'SpaceReservationCreated' | 'LeaseCreated' | 'RentalCreated' | 'DiaryEntryRequired' | 'DiaryEntryActioned' | 'DocumentReady' | 'DocumentRequired' | 'DocumentCompleted' | 'CommunicationRequired' | 'CartLeaseItemPurchased' | 'InvoiceRequired' | 'InvoiceV2Required' | 'InvoiceStateChanged' | 'InvoiceV2LineItemRequired' | 'ImportCompleted' | 'SmartSearchCompleted' | 'PaymentRequested' | 'PaymentAttempted' | 'UpdateUnit';
     export const TriggerEventSchemaCodeNameEnum = {
         AuditEntryRequired: 'AuditEntryRequired' as TriggerEventSchemaCodeNameEnum,
         MoveOutCreated: 'MoveOutCreated' as TriggerEventSchemaCodeNameEnum,
@@ -37,6 +37,7 @@ export namespace CreateWorkflowDefinitionRequest {
         ReservationExpired: 'ReservationExpired' as TriggerEventSchemaCodeNameEnum,
         SpaceReservationCreated: 'SpaceReservationCreated' as TriggerEventSchemaCodeNameEnum,
         LeaseCreated: 'LeaseCreated' as TriggerEventSchemaCodeNameEnum,
+        RentalCreated: 'RentalCreated' as TriggerEventSchemaCodeNameEnum,
         DiaryEntryRequired: 'DiaryEntryRequired' as TriggerEventSchemaCodeNameEnum,
         DiaryEntryActioned: 'DiaryEntryActioned' as TriggerEventSchemaCodeNameEnum,
         DocumentReady: 'DocumentReady' as TriggerEventSchemaCodeNameEnum,
