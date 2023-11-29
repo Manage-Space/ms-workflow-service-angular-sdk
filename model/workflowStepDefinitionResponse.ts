@@ -72,6 +72,10 @@ export interface WorkflowStepDefinitionResponse {
      * Templates
      */
     templates: object;
+    /**
+     * Ports
+     */
+    ports?: object;
 }
 export namespace WorkflowStepDefinitionResponse {
     export type StepTypeIdEnum = 1 | 2 | 3 | 4;

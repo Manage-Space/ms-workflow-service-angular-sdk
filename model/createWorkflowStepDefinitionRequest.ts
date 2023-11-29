@@ -45,6 +45,10 @@ export interface CreateWorkflowStepDefinitionRequest {
      */
     maxRunCount?: number;
     /**
+     * Ports
+     */
+    ports?: object;
+    /**
      * Mappings
      */
     mappings: object;
