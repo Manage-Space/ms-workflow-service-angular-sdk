@@ -47,7 +47,7 @@ export interface CreateWorkflowStepDefinitionRequest {
     /**
      * Ports
      */
-    ports?: object;
+    ports?: object | null;
     /**
      * Mappings
      */
