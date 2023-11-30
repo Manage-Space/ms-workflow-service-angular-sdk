@@ -76,6 +76,10 @@ export interface WorkflowStepDefinitionResponse {
      * Ports
      */
     ports?: object;
+    /**
+     * The port that starts this step.
+     */
+    triggerPort?: string;
 }
 export namespace WorkflowStepDefinitionResponse {
     export type StepTypeIdEnum = 1 | 2 | 3 | 4;

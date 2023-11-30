@@ -57,6 +57,10 @@ export interface WorkflowStepInstanceResponse {
      */
     ports?: object;
     /**
+     * The port that starts this step.
+     */
+    triggerPort?: string;
+    /**
      * The event that will trigger this step.
      */
     executionTriggerValue?: string;

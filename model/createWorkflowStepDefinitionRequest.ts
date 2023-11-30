@@ -49,6 +49,10 @@ export interface CreateWorkflowStepDefinitionRequest {
      */
     ports?: object | null;
     /**
+     * The port that starts this step.
+     */
+    triggerPort?: string;
+    /**
      * Mappings
      */
     mappings: object;
