@@ -19,6 +19,7 @@ export * from './metaDataCodeResponse';
 export * from './metaDataNameResponse';
 export * from './unauthorizedError401Response';
 export * from './unauthorizedError401ResponseError';
+export * from './updateStepInstanceRequestDto';
 export * from './workflowDefinitionResponse';
 export * from './workflowInstanceResponse';
 export * from './workflowStepDefinitionResponse';

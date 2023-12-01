@@ -44,6 +44,8 @@ import { GetWorkflowStepDefinitions200Response } from '../model/getWorkflowStepD
 import { InternalServerError500Response } from '../model/internalServerError500Response';
 // @ts-ignore
 import { UnauthorizedError401Response } from '../model/unauthorizedError401Response';
+// @ts-ignore
+import { UpdateStepInstanceRequestDto } from '../model/updateStepInstanceRequestDto';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -1104,6 +1106,95 @@ export class DefaultService {
         return this.httpClient.request<GetWorkflowStepDefinitions200Response>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Update a step with form data.
+     * Update a step with form data.
+     * @param orgId The Organization ID
+     * @param instanceId Workflow definition ID
+     * @param stepId Workflow step definition ID
+     * @param updateStepInstanceRequestDto 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWorkflowInstances200Response>;
+    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWorkflowInstances200Response>>;
+    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWorkflowInstances200Response>>;
+    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+        if (orgId === null || orgId === undefined) {
+            throw new Error('Required parameter orgId was null or undefined when calling updateStep.');
+        }
+        if (instanceId === null || instanceId === undefined) {
+            throw new Error('Required parameter instanceId was null or undefined when calling updateStep.');
+        }
+        if (stepId === null || stepId === undefined) {
+            throw new Error('Required parameter stepId was null or undefined when calling updateStep.');
+        }
+        if (updateStepInstanceRequestDto === null || updateStepInstanceRequestDto === undefined) {
+            throw new Error('Required parameter updateStepInstanceRequestDto was null or undefined when calling updateStep.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        let localVarCredential: string | undefined;
+        // authentication (bearer) required
+        localVarCredential = this.configuration.lookupCredential('bearer');
+        if (localVarCredential) {
+            localVarHeaders = localVarHeaders.set('Authorization', 'Bearer ' + localVarCredential);
+        }
+
+        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected === undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] = [
+                'application/json;v=1',
+                'application/json'
+            ];
+            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        let localVarHttpContext: HttpContext | undefined = options && options.context;
+        if (localVarHttpContext === undefined) {
+            localVarHttpContext = new HttpContext();
+        }
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/workflow/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/instances/${this.configuration.encodeParam({name: "instanceId", value: instanceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/steps/${this.configuration.encodeParam({name: "stepId", value: stepId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<GetWorkflowInstances200Response>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: updateStepInstanceRequestDto,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
