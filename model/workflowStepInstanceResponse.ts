@@ -29,10 +29,6 @@ export interface WorkflowStepInstanceResponse {
      */
     workflowStepDefinitionId: string;
     /**
-     * The type of this step
-     */
-    stepTypeId: number;
-    /**
      * The start time of this workflow step
      */
     startedAt?: string;
@@ -45,10 +41,6 @@ export interface WorkflowStepInstanceResponse {
      */
     stepStatusId: number;
     /**
-     * The event the step will raise.
-     */
-    raiseEventSchemaCodeName?: string;
-    /**
      * The name of a custom function.
      */
     externalStepName?: string;
@@ -60,10 +52,6 @@ export interface WorkflowStepInstanceResponse {
      * The port that starts this step.
      */
     triggerPort?: string;
-    /**
-     * The event that will trigger this step.
-     */
-    executionTriggerValue?: string;
     /**
      * The number of minutes after finishing the previous step that this step should execute by.
      */
@@ -92,17 +80,5 @@ export interface WorkflowStepInstanceResponse {
      * The number of times this step can run.
      */
     maxRunCount: number;
-    /**
-     * Mappings
-     */
-    mappings: object;
-    /**
-     * Literals
-     */
-    literals: object;
-    /**
-     * Templates
-     */
-    templates: object;
 }
 

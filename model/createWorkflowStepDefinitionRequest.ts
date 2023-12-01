@@ -17,14 +17,6 @@ export interface CreateWorkflowStepDefinitionRequest {
      */
     description: string;
     /**
-     * The event the step will raise.
-     */
-    raiseEventSchemaCodeName?: string;
-    /**
-     * The event the step will raise.
-     */
-    executionTriggerValue?: string;
-    /**
      * The number of minutes after finishing the previous step that this step should execute by.
      */
     delay?: number;
@@ -52,22 +44,6 @@ export interface CreateWorkflowStepDefinitionRequest {
      * The port that starts this step.
      */
     triggerPort?: string;
-    /**
-     * Mappings
-     */
-    mappings: object;
-    /**
-     * Literals
-     */
-    literals: object;
-    /**
-     * Templates
-     */
-    templates: object;
-    /**
-     * Step type id
-     */
-    stepTypeId: number;
     /**
      * The name of a custom function.
      */

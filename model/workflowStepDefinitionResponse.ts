@@ -21,25 +21,13 @@ export interface WorkflowStepDefinitionResponse {
      */
     workflowDefinitionId: string;
     /**
-     * The type of this step
-     */
-    stepTypeId: WorkflowStepDefinitionResponse.StepTypeIdEnum;
-    /**
      * A description of what the step does.
      */
     description: string;
     /**
-     * The event that will trigger this step.
-     */
-    executionTriggerValue?: string;
-    /**
      * The number of minutes after finishing the previous step that this step should execute by.
      */
     delay?: number;
-    /**
-     * The event the step will raise.
-     */
-    raiseEventSchemaCodeName?: string;
     /**
      * The name of a custom function.
      */
@@ -61,18 +49,6 @@ export interface WorkflowStepDefinitionResponse {
      */
     maxCount: number;
     /**
-     * Mappings
-     */
-    mappings: object;
-    /**
-     * Literals
-     */
-    literals: object;
-    /**
-     * Templates
-     */
-    templates: object;
-    /**
      * Ports
      */
     ports?: object;
@@ -81,14 +57,4 @@ export interface WorkflowStepDefinitionResponse {
      */
     triggerPort?: string;
 }
-export namespace WorkflowStepDefinitionResponse {
-    export type StepTypeIdEnum = 1 | 2 | 3 | 4;
-    export const StepTypeIdEnum = {
-        NUMBER_1: 1 as StepTypeIdEnum,
-        NUMBER_2: 2 as StepTypeIdEnum,
-        NUMBER_3: 3 as StepTypeIdEnum,
-        NUMBER_4: 4 as StepTypeIdEnum
-    };
-}
-
 
