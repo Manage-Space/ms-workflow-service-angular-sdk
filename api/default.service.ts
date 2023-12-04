@@ -120,14 +120,18 @@ export class DefaultService {
     /**
      * Create meta data for your organization workflows.
      * Create meta data for your organization workflows.
+     * @param orgId The Organization ID
      * @param createMetaDataRequest 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createMetaData(createMetaDataRequest: CreateMetaDataRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetStepCode200Response>;
-    public createMetaData(createMetaDataRequest: CreateMetaDataRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetStepCode200Response>>;
-    public createMetaData(createMetaDataRequest: CreateMetaDataRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetStepCode200Response>>;
-    public createMetaData(createMetaDataRequest: CreateMetaDataRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetStepCode200Response>;
+    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetStepCode200Response>>;
+    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetStepCode200Response>>;
+    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+        if (orgId === null || orgId === undefined) {
+            throw new Error('Required parameter orgId was null or undefined when calling createMetaData.');
+        }
         if (createMetaDataRequest === null || createMetaDataRequest === undefined) {
             throw new Error('Required parameter createMetaDataRequest was null or undefined when calling createMetaData.');
         }
@@ -180,7 +184,7 @@ export class DefaultService {
             }
         }
 
-        let localVarPath = `/workflow/meta-data`;
+        let localVarPath = `/workflow/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/meta-data`;
         return this.httpClient.request<GetStepCode200Response>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
@@ -578,13 +582,17 @@ export class DefaultService {
     /**
      * Get the meta data step names for all steps in your organization.
      * Get the meta data step names for all steps in your organization.
+     * @param orgId The Organization ID
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getStepNames(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetStepNames200Response>;
-    public getStepNames(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetStepNames200Response>>;
-    public getStepNames(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetStepNames200Response>>;
-    public getStepNames(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getStepNames(orgId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetStepNames200Response>;
+    public getStepNames(orgId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetStepNames200Response>>;
+    public getStepNames(orgId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetStepNames200Response>>;
+    public getStepNames(orgId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+        if (orgId === null || orgId === undefined) {
+            throw new Error('Required parameter orgId was null or undefined when calling getStepNames.');
+        }
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -625,7 +633,7 @@ export class DefaultService {
             }
         }
 
-        let localVarPath = `/workflow/meta-data`;
+        let localVarPath = `/workflow/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/meta-data`;
         return this.httpClient.request<GetStepNames200Response>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,

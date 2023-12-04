@@ -20,5 +20,9 @@ export interface CreateMetaDataRequest {
      * The code that will run for steps with this external name.
      */
     code: string;
+    /**
+     * Object version
+     */
+    versionId?: string;
 }
 
