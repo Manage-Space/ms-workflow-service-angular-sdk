@@ -9,13 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { NameOnlyMetaDataRequest } from './nameOnlyMetaDataRequest';
 
 
 export interface CreateWorkflowStepDefinitionRequest { 
-    /**
-     * A description of what the step does.
-     */
-    description: string;
     /**
      * The number of minutes after finishing the previous step that this step should execute by.
      */
@@ -44,9 +41,6 @@ export interface CreateWorkflowStepDefinitionRequest {
      * The port that starts this step.
      */
     triggerPort?: string;
-    /**
-     * The name of a custom function.
-     */
-    externalStepName?: string;
+    metaData: NameOnlyMetaDataRequest;
 }
 

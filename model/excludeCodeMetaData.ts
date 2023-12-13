@@ -11,9 +11,13 @@
  */
 
 
-export interface CreateMetaDataRequest { 
+export interface ExcludeCodeMetaData { 
     /**
-     * The name of the executable code.
+     * The id of the metaData.
+     */
+    metaDataId: string;
+    /**
+     * The name of the step the metaData is linked to.
      */
     name: string;
     /**

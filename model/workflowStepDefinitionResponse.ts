@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ExcludeCodeMetaData } from './excludeCodeMetaData';
 
 
 export interface WorkflowStepDefinitionResponse { 
@@ -21,17 +22,9 @@ export interface WorkflowStepDefinitionResponse {
      */
     workflowDefinitionId: string;
     /**
-     * A description of what the step does.
-     */
-    description: string;
-    /**
      * The number of minutes after finishing the previous step that this step should execute by.
      */
     delay?: number;
-    /**
-     * The name of a custom function.
-     */
-    externalStepName?: string;
     /**
      * Step position
      */
@@ -56,5 +49,6 @@ export interface WorkflowStepDefinitionResponse {
      * The port that starts this step.
      */
     triggerPort?: string;
+    metaData: ExcludeCodeMetaData;
 }
 

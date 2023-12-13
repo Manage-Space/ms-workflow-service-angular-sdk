@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ExcludeCodeMetaData } from './excludeCodeMetaData';
 
 
 export interface WorkflowStepInstanceResponse { 
@@ -16,10 +17,6 @@ export interface WorkflowStepInstanceResponse {
      * Workflow Step Instance ID
      */
     id: string;
-    /**
-     * Workflow Step Instance Description
-     */
-    description: string;
     /**
      * Workflow Instance ID of this step
      */
@@ -40,10 +37,6 @@ export interface WorkflowStepInstanceResponse {
      * The status of this workflow
      */
     stepStatusId: number;
-    /**
-     * The name of a custom function.
-     */
-    externalStepName?: string;
     /**
      * Ports
      */
@@ -80,5 +73,6 @@ export interface WorkflowStepInstanceResponse {
      * The number of times this step can run.
      */
     maxRunCount: number;
+    metaData: ExcludeCodeMetaData;
 }
 

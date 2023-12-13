@@ -11,26 +11,10 @@
  */
 
 
-export interface CreateMetaDataRequest { 
+export interface NameOnlyMetaDataRequest { 
     /**
      * The name of the executable code.
      */
     name: string;
-    /**
-     * The code that will run for steps with this external name.
-     */
-    code: string;
-    /**
-     * Object version
-     */
-    versionId?: string;
-    /**
-     * The description of the executable code.
-     */
-    description: string;
-    /**
-     * Is the code public or private.
-     */
-    isPublic: boolean;
 }
 
