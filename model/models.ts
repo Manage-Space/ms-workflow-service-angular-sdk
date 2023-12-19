@@ -19,6 +19,7 @@ export * from './internalServerError500ResponseError';
 export * from './metaDataCodeResponse';
 export * from './metaDataNameResponse';
 export * from './nameOnlyMetaDataRequest';
+export * from './setStepInstanceExecuteByRequestDto';
 export * from './unauthorizedError401Response';
 export * from './unauthorizedError401ResponseError';
 export * from './updateStepInstanceRequestDto';
