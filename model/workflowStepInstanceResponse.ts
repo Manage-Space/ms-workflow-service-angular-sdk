@@ -42,14 +42,6 @@ export interface WorkflowStepInstanceResponse {
      */
     ports?: object;
     /**
-     * The port that starts this step.
-     */
-    triggerPort?: string;
-    /**
-     * The number of minutes after finishing the previous step that this step should execute by.
-     */
-    delay?: number;
-    /**
      * The time at which this step should begin executing
      */
     executeBy?: string;
@@ -57,14 +49,6 @@ export interface WorkflowStepInstanceResponse {
      * Step position
      */
     stepPosition: number;
-    /**
-     * Previous step position
-     */
-    previousStep?: number;
-    /**
-     * Next step position
-     */
-    nextStep?: number;
     /**
      * The number of times this step has run.
      */

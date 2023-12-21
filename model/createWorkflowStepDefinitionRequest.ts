@@ -14,21 +14,9 @@ import { NameOnlyMetaDataRequest } from './nameOnlyMetaDataRequest';
 
 export interface CreateWorkflowStepDefinitionRequest { 
     /**
-     * The number of minutes after finishing the previous step that this step should execute by.
-     */
-    delay?: number;
-    /**
      * Step position
      */
     stepPosition: number;
-    /**
-     * Step position
-     */
-    previousStep?: number;
-    /**
-     * Step position
-     */
-    nextStep?: number;
     /**
      * Max run count of a step
      */
@@ -37,10 +25,6 @@ export interface CreateWorkflowStepDefinitionRequest {
      * Ports
      */
     ports?: object | null;
-    /**
-     * The port that starts this step.
-     */
-    triggerPort?: string;
     metaData: NameOnlyMetaDataRequest;
 }
 

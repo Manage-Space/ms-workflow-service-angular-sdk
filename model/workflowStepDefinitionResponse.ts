@@ -22,21 +22,9 @@ export interface WorkflowStepDefinitionResponse {
      */
     workflowDefinitionId: string;
     /**
-     * The number of minutes after finishing the previous step that this step should execute by.
-     */
-    delay?: number;
-    /**
      * Step position
      */
     stepPosition: number;
-    /**
-     * Previous step position
-     */
-    previousStep?: number;
-    /**
-     * Next step position
-     */
-    nextStep?: number;
     /**
      * The number of times this step can run.
      */
@@ -45,10 +33,6 @@ export interface WorkflowStepDefinitionResponse {
      * Ports
      */
     ports?: object;
-    /**
-     * The port that starts this step.
-     */
-    triggerPort?: string;
     metaData: ExcludeCodeMetaData;
 }
 
