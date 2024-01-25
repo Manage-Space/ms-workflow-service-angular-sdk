@@ -63,9 +63,8 @@ export interface WorkflowDefinitionResponse {
     steps: Array<WorkflowStepDefinitionResponse>;
 }
 export namespace WorkflowDefinitionResponse {
-    export type TriggerEventSchemaCodeNameEnum = 'AuditEntryRequired' | 'MoveOutCreated' | 'ReservationCreated' | 'ReservationUpdated' | 'ReservationCancelled' | 'ReservationExpired' | 'SpaceReservationCreated' | 'LeaseCreated' | 'RentalCreated' | 'DiaryEntryRequired' | 'DiaryEntryActioned' | 'DocumentReady' | 'DocumentRequired' | 'DocumentCompleted' | 'CommunicationRequired' | 'CartLeaseItemPurchased' | 'InvoiceRequired' | 'InvoiceV2Required' | 'InvoiceStateChanged' | 'InvoiceV2LineItemRequired' | 'ImportCompleted' | 'SmartSearchCompleted' | 'PaymentRequested' | 'PaymentAttempted' | 'UpdateUnit';
+    export type TriggerEventSchemaCodeNameEnum = 'MoveOutCreated' | 'ReservationCreated' | 'ReservationUpdated' | 'ReservationCancelled' | 'ReservationExpired' | 'SpaceReservationCreated' | 'LeaseCreated' | 'RentalCreated' | 'DiaryEntryRequired' | 'DiaryEntryActioned' | 'DocumentReady' | 'DocumentRequired' | 'DocumentCompleted' | 'CommunicationRequired' | 'CartLeaseItemPurchased' | 'InvoiceRequired' | 'InvoiceV2Required' | 'InvoiceStateChanged' | 'InvoiceV2LineItemRequired' | 'ImportCompleted' | 'SmartSearchCompleted' | 'PaymentRequested' | 'PaymentAttempted' | 'UpdateUnit';
     export const TriggerEventSchemaCodeNameEnum = {
-        AuditEntryRequired: 'AuditEntryRequired' as TriggerEventSchemaCodeNameEnum,
         MoveOutCreated: 'MoveOutCreated' as TriggerEventSchemaCodeNameEnum,
         ReservationCreated: 'ReservationCreated' as TriggerEventSchemaCodeNameEnum,
         ReservationUpdated: 'ReservationUpdated' as TriggerEventSchemaCodeNameEnum,
