@@ -33,7 +33,7 @@ import { ForbiddenError403Response } from '../model/forbiddenError403Response';
 // @ts-ignore
 import { GetByWorkflowInstanceId200Response } from '../model/getByWorkflowInstanceId200Response';
 // @ts-ignore
-import { GetStepNames200Response } from '../model/getStepNames200Response';
+import { GetWithoutCode200Response } from '../model/getWithoutCode200Response';
 // @ts-ignore
 import { GetWorkflowInstanceById200Response } from '../model/getWorkflowInstanceById200Response';
 // @ts-ignore
@@ -582,18 +582,18 @@ export class DefaultService {
     }
 
     /**
-     * Get the meta data step names for all steps in your organization.
-     * Get the meta data step names for all steps in your organization.
+     * Get the meta data for all steps in your organization, excluding code.
+     * Get the meta data for all steps in your organization, excluding code.
      * @param orgId The Organization ID
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getStepNames(orgId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetStepNames200Response>;
-    public getStepNames(orgId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetStepNames200Response>>;
-    public getStepNames(orgId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetStepNames200Response>>;
-    public getStepNames(orgId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getWithoutCode(orgId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWithoutCode200Response>;
+    public getWithoutCode(orgId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWithoutCode200Response>>;
+    public getWithoutCode(orgId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWithoutCode200Response>>;
+    public getWithoutCode(orgId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
         if (orgId === null || orgId === undefined) {
-            throw new Error('Required parameter orgId was null or undefined when calling getStepNames.');
+            throw new Error('Required parameter orgId was null or undefined when calling getWithoutCode.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -636,7 +636,7 @@ export class DefaultService {
         }
 
         let localVarPath = `/workflow/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/meta-data`;
-        return this.httpClient.request<GetStepNames200Response>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<GetWithoutCode200Response>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
