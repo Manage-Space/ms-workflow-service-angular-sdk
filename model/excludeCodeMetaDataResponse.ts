@@ -36,5 +36,9 @@ export interface ExcludeCodeMetaDataResponse {
      * Is the code public or private.
      */
     isPublic: boolean;
+    /**
+     * The available ports for this step
+     */
+    ports: Array<string>;
 }
 
