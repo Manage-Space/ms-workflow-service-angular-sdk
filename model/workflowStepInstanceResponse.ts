@@ -57,6 +57,9 @@ export interface WorkflowStepInstanceResponse {
      * The number of times this step can run.
      */
     maxRunCount: number;
+    /**
+     * The name of the step the metaData is linked to.
+     */
     metaData: ExcludeCodeMetaData;
 }
 

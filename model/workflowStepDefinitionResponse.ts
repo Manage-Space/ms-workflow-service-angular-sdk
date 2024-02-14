@@ -33,6 +33,9 @@ export interface WorkflowStepDefinitionResponse {
      * Ports
      */
     ports?: object;
+    /**
+     * The name of the step the metaData is linked to.
+     */
     metaData: ExcludeCodeMetaData;
 }
 

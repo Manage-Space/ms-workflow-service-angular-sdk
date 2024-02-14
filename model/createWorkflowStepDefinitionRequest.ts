@@ -25,6 +25,9 @@ export interface CreateWorkflowStepDefinitionRequest {
      * Ports
      */
     ports?: object | null;
+    /**
+     * The name of the step the metaData is linked to.
+     */
     metaData: NameOnlyMetaDataRequest;
 }
 

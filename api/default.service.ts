@@ -127,10 +127,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<CreateMetaData200Response>;
-    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<CreateMetaData200Response>>;
-    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<CreateMetaData200Response>>;
-    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CreateMetaData200Response>;
+    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CreateMetaData200Response>>;
+    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CreateMetaData200Response>>;
+    public createMetaData(orgId: string, createMetaDataRequest: CreateMetaDataRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling createMetaData.');
         }
@@ -165,6 +165,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         // to determine the Content-Type header
         const consumes: string[] = [
@@ -195,6 +200,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -209,10 +215,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createWorkflowDefinition(orgId: string, siteId: string, createWorkflowDefinitionRequest: CreateWorkflowDefinitionRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<CreateWorkflowDefinition200Response>;
-    public createWorkflowDefinition(orgId: string, siteId: string, createWorkflowDefinitionRequest: CreateWorkflowDefinitionRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<CreateWorkflowDefinition200Response>>;
-    public createWorkflowDefinition(orgId: string, siteId: string, createWorkflowDefinitionRequest: CreateWorkflowDefinitionRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<CreateWorkflowDefinition200Response>>;
-    public createWorkflowDefinition(orgId: string, siteId: string, createWorkflowDefinitionRequest: CreateWorkflowDefinitionRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public createWorkflowDefinition(orgId: string, siteId: string, createWorkflowDefinitionRequest: CreateWorkflowDefinitionRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CreateWorkflowDefinition200Response>;
+    public createWorkflowDefinition(orgId: string, siteId: string, createWorkflowDefinitionRequest: CreateWorkflowDefinitionRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CreateWorkflowDefinition200Response>>;
+    public createWorkflowDefinition(orgId: string, siteId: string, createWorkflowDefinitionRequest: CreateWorkflowDefinitionRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CreateWorkflowDefinition200Response>>;
+    public createWorkflowDefinition(orgId: string, siteId: string, createWorkflowDefinitionRequest: CreateWorkflowDefinitionRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling createWorkflowDefinition.');
         }
@@ -250,6 +256,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         // to determine the Content-Type header
         const consumes: string[] = [
@@ -280,6 +291,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -294,10 +306,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getByStepDefinitionId(orgId: string, definitionId: string, stepId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWorkflowStepDefinitions200Response>;
-    public getByStepDefinitionId(orgId: string, definitionId: string, stepId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWorkflowStepDefinitions200Response>>;
-    public getByStepDefinitionId(orgId: string, definitionId: string, stepId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWorkflowStepDefinitions200Response>>;
-    public getByStepDefinitionId(orgId: string, definitionId: string, stepId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getByStepDefinitionId(orgId: string, definitionId: string, stepId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetWorkflowStepDefinitions200Response>;
+    public getByStepDefinitionId(orgId: string, definitionId: string, stepId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetWorkflowStepDefinitions200Response>>;
+    public getByStepDefinitionId(orgId: string, definitionId: string, stepId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetWorkflowStepDefinitions200Response>>;
+    public getByStepDefinitionId(orgId: string, definitionId: string, stepId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getByStepDefinitionId.');
         }
@@ -335,6 +347,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -355,6 +372,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -369,10 +387,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getByStepInstanceId(orgId: string, instanceId: string, stepId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetByWorkflowInstanceId200Response>;
-    public getByStepInstanceId(orgId: string, instanceId: string, stepId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetByWorkflowInstanceId200Response>>;
-    public getByStepInstanceId(orgId: string, instanceId: string, stepId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetByWorkflowInstanceId200Response>>;
-    public getByStepInstanceId(orgId: string, instanceId: string, stepId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getByStepInstanceId(orgId: string, instanceId: string, stepId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetByWorkflowInstanceId200Response>;
+    public getByStepInstanceId(orgId: string, instanceId: string, stepId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetByWorkflowInstanceId200Response>>;
+    public getByStepInstanceId(orgId: string, instanceId: string, stepId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetByWorkflowInstanceId200Response>>;
+    public getByStepInstanceId(orgId: string, instanceId: string, stepId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getByStepInstanceId.');
         }
@@ -410,6 +428,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -430,6 +453,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -443,10 +467,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getByWorkflowInstanceId(orgId: string, instanceId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetByWorkflowInstanceId200Response>;
-    public getByWorkflowInstanceId(orgId: string, instanceId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetByWorkflowInstanceId200Response>>;
-    public getByWorkflowInstanceId(orgId: string, instanceId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetByWorkflowInstanceId200Response>>;
-    public getByWorkflowInstanceId(orgId: string, instanceId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getByWorkflowInstanceId(orgId: string, instanceId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetByWorkflowInstanceId200Response>;
+    public getByWorkflowInstanceId(orgId: string, instanceId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetByWorkflowInstanceId200Response>>;
+    public getByWorkflowInstanceId(orgId: string, instanceId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetByWorkflowInstanceId200Response>>;
+    public getByWorkflowInstanceId(orgId: string, instanceId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getByWorkflowInstanceId.');
         }
@@ -481,6 +505,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -501,6 +530,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -515,10 +545,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<CreateMetaData200Response>;
-    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<CreateMetaData200Response>>;
-    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<CreateMetaData200Response>>;
-    public getStepCode(orgId: string, definitionId: string, stepId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CreateMetaData200Response>;
+    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CreateMetaData200Response>>;
+    public getStepCode(orgId: string, definitionId: string, stepId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CreateMetaData200Response>>;
+    public getStepCode(orgId: string, definitionId: string, stepId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getStepCode.');
         }
@@ -556,6 +586,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -576,6 +611,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -588,10 +624,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getWithoutCode(orgId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWithoutCode200Response>;
-    public getWithoutCode(orgId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWithoutCode200Response>>;
-    public getWithoutCode(orgId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWithoutCode200Response>>;
-    public getWithoutCode(orgId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getWithoutCode(orgId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetWithoutCode200Response>;
+    public getWithoutCode(orgId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetWithoutCode200Response>>;
+    public getWithoutCode(orgId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetWithoutCode200Response>>;
+    public getWithoutCode(orgId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getWithoutCode.');
         }
@@ -623,6 +659,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -643,6 +684,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -656,10 +698,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getWorkflowDefinitionById(orgId: string, definitionId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<CreateWorkflowDefinition200Response>;
-    public getWorkflowDefinitionById(orgId: string, definitionId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<CreateWorkflowDefinition200Response>>;
-    public getWorkflowDefinitionById(orgId: string, definitionId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<CreateWorkflowDefinition200Response>>;
-    public getWorkflowDefinitionById(orgId: string, definitionId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getWorkflowDefinitionById(orgId: string, definitionId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CreateWorkflowDefinition200Response>;
+    public getWorkflowDefinitionById(orgId: string, definitionId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CreateWorkflowDefinition200Response>>;
+    public getWorkflowDefinitionById(orgId: string, definitionId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CreateWorkflowDefinition200Response>>;
+    public getWorkflowDefinitionById(orgId: string, definitionId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getWorkflowDefinitionById.');
         }
@@ -694,6 +736,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -714,6 +761,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -728,10 +776,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getWorkflowDefinitions(orgId: string, offset?: number, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<CreateWorkflowDefinition200Response>;
-    public getWorkflowDefinitions(orgId: string, offset?: number, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<CreateWorkflowDefinition200Response>>;
-    public getWorkflowDefinitions(orgId: string, offset?: number, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<CreateWorkflowDefinition200Response>>;
-    public getWorkflowDefinitions(orgId: string, offset?: number, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getWorkflowDefinitions(orgId: string, offset?: number, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CreateWorkflowDefinition200Response>;
+    public getWorkflowDefinitions(orgId: string, offset?: number, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CreateWorkflowDefinition200Response>>;
+    public getWorkflowDefinitions(orgId: string, offset?: number, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CreateWorkflowDefinition200Response>>;
+    public getWorkflowDefinitions(orgId: string, offset?: number, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getWorkflowDefinitions.');
         }
@@ -773,6 +821,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -794,6 +847,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -807,10 +861,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getWorkflowInstanceById(orgId: string, instanceId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWorkflowInstanceById200Response>;
-    public getWorkflowInstanceById(orgId: string, instanceId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWorkflowInstanceById200Response>>;
-    public getWorkflowInstanceById(orgId: string, instanceId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWorkflowInstanceById200Response>>;
-    public getWorkflowInstanceById(orgId: string, instanceId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getWorkflowInstanceById(orgId: string, instanceId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetWorkflowInstanceById200Response>;
+    public getWorkflowInstanceById(orgId: string, instanceId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetWorkflowInstanceById200Response>>;
+    public getWorkflowInstanceById(orgId: string, instanceId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetWorkflowInstanceById200Response>>;
+    public getWorkflowInstanceById(orgId: string, instanceId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getWorkflowInstanceById.');
         }
@@ -845,6 +899,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -865,6 +924,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -883,10 +943,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getWorkflowInstances(orgId: string, offset?: number, limit?: number, siteId?: string, state?: number, dateFrom?: string, dateTo?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWorkflowInstances200Response>;
-    public getWorkflowInstances(orgId: string, offset?: number, limit?: number, siteId?: string, state?: number, dateFrom?: string, dateTo?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWorkflowInstances200Response>>;
-    public getWorkflowInstances(orgId: string, offset?: number, limit?: number, siteId?: string, state?: number, dateFrom?: string, dateTo?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWorkflowInstances200Response>>;
-    public getWorkflowInstances(orgId: string, offset?: number, limit?: number, siteId?: string, state?: number, dateFrom?: string, dateTo?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getWorkflowInstances(orgId: string, offset?: number, limit?: number, siteId?: string, state?: number, dateFrom?: string, dateTo?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetWorkflowInstances200Response>;
+    public getWorkflowInstances(orgId: string, offset?: number, limit?: number, siteId?: string, state?: number, dateFrom?: string, dateTo?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetWorkflowInstances200Response>>;
+    public getWorkflowInstances(orgId: string, offset?: number, limit?: number, siteId?: string, state?: number, dateFrom?: string, dateTo?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetWorkflowInstances200Response>>;
+    public getWorkflowInstances(orgId: string, offset?: number, limit?: number, siteId?: string, state?: number, dateFrom?: string, dateTo?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getWorkflowInstances.');
         }
@@ -944,6 +1004,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -965,6 +1030,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -980,10 +1046,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getWorkflowInstancesByDefinitionId(orgId: string, definitionId: string, offset?: number, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWorkflowInstances200Response>;
-    public getWorkflowInstancesByDefinitionId(orgId: string, definitionId: string, offset?: number, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWorkflowInstances200Response>>;
-    public getWorkflowInstancesByDefinitionId(orgId: string, definitionId: string, offset?: number, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWorkflowInstances200Response>>;
-    public getWorkflowInstancesByDefinitionId(orgId: string, definitionId: string, offset?: number, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getWorkflowInstancesByDefinitionId(orgId: string, definitionId: string, offset?: number, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetWorkflowInstances200Response>;
+    public getWorkflowInstancesByDefinitionId(orgId: string, definitionId: string, offset?: number, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetWorkflowInstances200Response>>;
+    public getWorkflowInstancesByDefinitionId(orgId: string, definitionId: string, offset?: number, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetWorkflowInstances200Response>>;
+    public getWorkflowInstancesByDefinitionId(orgId: string, definitionId: string, offset?: number, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getWorkflowInstancesByDefinitionId.');
         }
@@ -1028,6 +1094,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -1049,6 +1120,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1062,10 +1134,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getWorkflowStepDefinitions(orgId: string, definitionId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWorkflowStepDefinitions200Response>;
-    public getWorkflowStepDefinitions(orgId: string, definitionId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWorkflowStepDefinitions200Response>>;
-    public getWorkflowStepDefinitions(orgId: string, definitionId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWorkflowStepDefinitions200Response>>;
-    public getWorkflowStepDefinitions(orgId: string, definitionId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public getWorkflowStepDefinitions(orgId: string, definitionId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetWorkflowStepDefinitions200Response>;
+    public getWorkflowStepDefinitions(orgId: string, definitionId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetWorkflowStepDefinitions200Response>>;
+    public getWorkflowStepDefinitions(orgId: string, definitionId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetWorkflowStepDefinitions200Response>>;
+    public getWorkflowStepDefinitions(orgId: string, definitionId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getWorkflowStepDefinitions.');
         }
@@ -1100,6 +1172,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -1120,6 +1197,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1135,10 +1213,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public setNextStepExecuteBy(orgId: string, instanceId: string, stepId: string, setStepInstanceExecuteByRequestDto: SetStepInstanceExecuteByRequestDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetByWorkflowInstanceId200Response>;
-    public setNextStepExecuteBy(orgId: string, instanceId: string, stepId: string, setStepInstanceExecuteByRequestDto: SetStepInstanceExecuteByRequestDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetByWorkflowInstanceId200Response>>;
-    public setNextStepExecuteBy(orgId: string, instanceId: string, stepId: string, setStepInstanceExecuteByRequestDto: SetStepInstanceExecuteByRequestDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetByWorkflowInstanceId200Response>>;
-    public setNextStepExecuteBy(orgId: string, instanceId: string, stepId: string, setStepInstanceExecuteByRequestDto: SetStepInstanceExecuteByRequestDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public setNextStepExecuteBy(orgId: string, instanceId: string, stepId: string, setStepInstanceExecuteByRequestDto: SetStepInstanceExecuteByRequestDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetByWorkflowInstanceId200Response>;
+    public setNextStepExecuteBy(orgId: string, instanceId: string, stepId: string, setStepInstanceExecuteByRequestDto: SetStepInstanceExecuteByRequestDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetByWorkflowInstanceId200Response>>;
+    public setNextStepExecuteBy(orgId: string, instanceId: string, stepId: string, setStepInstanceExecuteByRequestDto: SetStepInstanceExecuteByRequestDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetByWorkflowInstanceId200Response>>;
+    public setNextStepExecuteBy(orgId: string, instanceId: string, stepId: string, setStepInstanceExecuteByRequestDto: SetStepInstanceExecuteByRequestDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling setNextStepExecuteBy.');
         }
@@ -1179,6 +1257,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         // to determine the Content-Type header
         const consumes: string[] = [
@@ -1209,6 +1292,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -1224,10 +1308,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<GetWorkflowInstances200Response>;
-    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpResponse<GetWorkflowInstances200Response>>;
-    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<HttpEvent<GetWorkflowInstances200Response>>;
-    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext}): Observable<any> {
+    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetWorkflowInstances200Response>;
+    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetWorkflowInstances200Response>>;
+    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetWorkflowInstances200Response>>;
+    public updateStep(orgId: string, instanceId: string, stepId: string, updateStepInstanceRequestDto: UpdateStepInstanceRequestDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1' | 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling updateStep.');
         }
@@ -1268,6 +1352,11 @@ export class DefaultService {
             localVarHttpContext = new HttpContext();
         }
 
+        let localVarTransferCache: boolean | undefined = options && options.transferCache;
+        if (localVarTransferCache === undefined) {
+            localVarTransferCache = true;
+        }
+
 
         // to determine the Content-Type header
         const consumes: string[] = [
@@ -1298,6 +1387,7 @@ export class DefaultService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
+                transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
